@@ -5,12 +5,13 @@ Adds a responsive landing page and a small Express backend to handle contact for
 ### What I changed
 
 - `index.html`, `styles.css`, `script.js` — landing page (hero, services, about, testimonials, contact form). Client sends submissions via Fetch.
-- `server/index.js` — Express server exposing `POST /api/contact`, with simple validation and optional SMTP sending via `nodemailer`.
+- `api/contact.js` — Vercel Serverless Function handling `POST /api/contact` (validates input and sends email via SMTP when configured)
+- `server/index.js` — Express server (kept for local development) exposing `POST /api/contact` with similar behavior
 - `package.json` — scripts to run the server and run tests.
-- `.env.example` — example SMTP variables and CONTACT_TO for production.
-- `server/test/contact.test.js` — basic tests using `supertest` and `jest`.
+- `.env.example` — example SMTP variables and `CONTACT_TO` for production.
+- `api/contact.test.js` & `server/test/contact.test.js` — basic tests using `supertest` and `jest`.
 - `.github/workflows/ci.yml` — CI that runs tests on PRs.
-- `publish-landing.sh` — helper script to create a branch, commit, push, and create a PR with `gh`.
+- `publish-landing.sh` — helper script to create a branch, commit, push, and create a PR with `gh` (updated to include api files).
 - `PR_DESCRIPTION.md` — short PR body and checklist.
 
 ### How to test locally

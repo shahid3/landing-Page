@@ -1,6 +1,6 @@
 # landing-Page
 
-Crystal Clear Window Cleaning — simple responsive landing page with a contact form.
+Crystal Clear Window Cleaning — premium responsive landing page with a modern design and contact form.
 
 ## What’s included ✅
 
@@ -36,8 +36,24 @@ How to run:
 
 Notes:
 - If the contact form `action` still points to the Formspree placeholder (contains `your-form-id`), `script.js` will automatically send the submission to `/api/contact`.
-- If SMTP is not configured, the server logs contact messages to the console for local testing.
-- The server also serves the static files so you can preview the full site at `http://localhost:3000`.
+
+### Vercel Serverless Function
+
+This repo includes a Vercel Serverless Function at `api/contact.js` that handles `POST /api/contact`. It validates inputs, supports a honeypot field, and sends email via SMTP using the following environment variables:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE` (true/false)
+- `SMTP_USER`
+- `SMTP_PASS`
+- `CONTACT_TO`
+
+If SMTP variables are not set, the function will log the messages to the Vercel function logs for testing.
+
+To set the environment variables in Vercel: go to your Vercel project → Settings → Environment Variables and add the variables above for the Production environment.
+
+- The serverless function runs on the same deployment, so no extra hosting is required.
+- Locally you can still run the Express server for development (`npm run dev`) or run the function using `vercel dev` if you have the Vercel CLI installed.
 
 ## Deploying 📤
 

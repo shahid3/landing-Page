@@ -1,7 +1,7 @@
-Adds a responsive landing page for Crystal Clear Window Cleaning with:
+Adds a modern, premium responsive landing page for Crystal Clear Window Cleaning with:
 
-- `index.html` — hero, services, about, testimonials, and contact form
-- `styles.css` — responsive styling
+- `index.html` — redesigned hero, services, about, testimonials, and contact form
+- `styles.css` — premium styling (typography, gradients, cards, and subtle animations)
 - `script.js` — client-side validation + fetch submission to form action
 
 Preview locally: `python -m http.server 8000` and open `http://localhost:8000`.

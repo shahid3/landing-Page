@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Usage: ./publish-landing.sh [branch-name]
 BRANCH="${1:-add-landing-page}"
-FILES=(index.html styles.css script.js README.md PR_DESCRIPTION.md package.json .env.example server/index.js server/test/contact.test.js)
+FILES=(index.html styles.css script.js README.md PR_DESCRIPTION.md PR_BODY_FULL.md publish-landing.sh package.json .env.example server/index.js server/test/contact.test.js api/contact.js api/contact.test.js .github/workflows/ci.yml)
 COMMIT_MSG="Add landing page with contact form"
 AUTHOR="GitHub Copilot <noreply@github.com>"
 
